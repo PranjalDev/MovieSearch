@@ -1,1 +1,3 @@
 # MovieSearch
+
+![Demo](Demo.png)
