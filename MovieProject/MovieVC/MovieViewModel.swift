@@ -26,11 +26,14 @@ struct MovieViewModel {
     
     func getData(searchText: String, pageNo: Int, completion: @escaping (MovieListModel) -> Void) {
         DispatchQueue.global(qos: .background).async {
-            guard let url = URL(string: "http://www.omdbapi.com/?s=\(searchText)&page=\(pageNo)&apikey=aefe4863") else {return}
-            var request = URLRequest(url: url)
-            request.httpMethod = "GET"
-            let urlSession = URLSession.shared
-            urlSession.dataTask(with: request) { data, response, error in
+            
+            guard let request = MovieAPI
+                .search(searchText: searchText, pageNo: pageNo)
+                .getURLRequest() else {
+                return
+            }
+
+            URLSession.shared.dataTask(with: request) { data, response, error in
                 do {
                     let jsonData = try JSONDecoder().decode(MovieListModel.self, from: data!)
                     completion(jsonData)

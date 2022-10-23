@@ -1,0 +1,6 @@
+framework module ElegantAPI {
+  umbrella header "ElegantAPI-umbrella.h"
+
+  export *
+  module * { export * }
+}

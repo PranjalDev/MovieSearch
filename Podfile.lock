@@ -1,0 +1,16 @@
+PODS:
+  - ElegantAPI (0.0.12)
+
+DEPENDENCIES:
+  - ElegantAPI
+
+SPEC REPOS:
+  trunk:
+    - ElegantAPI
+
+SPEC CHECKSUMS:
+  ElegantAPI: ee15c99f22ff5e5495f16fe8858f94dc9f2c2bc2
+
+PODFILE CHECKSUM: 17a790aaa69e63b6319c267f2dc2e23005915fab
+
+COCOAPODS: 1.11.3
